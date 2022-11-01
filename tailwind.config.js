@@ -4,6 +4,10 @@ module.exports = {
   darkMode: 'class',
   plugins: [require('@tailwindcss/typography')],
   theme: {
+    container: (theme) => ({
+      center: true,
+      padding: theme('spacing.4'),
+    }),
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],
@@ -120,9 +124,9 @@ module.exports = {
           },
 
           // Images
-          img: {
-            borderRadius: theme('borderRadius.3xl'),
-          },
+          // img: {
+          //   borderRadius: theme('borderRadius.3xl'),
+          // },
 
           // Inline elements
           a: {
@@ -218,7 +222,7 @@ module.exports = {
             fontSize: theme('fontSize.sm')[0],
             fontWeight: theme('fontWeight.medium'),
             backgroundColor: 'var(--tw-prose-pre-bg)',
-            borderRadius: theme('borderRadius.3xl'),
+            // borderRadius: theme('borderRadius.3xl'),
             padding: theme('spacing.8'),
             overflowX: 'auto',
             border: '1px solid',

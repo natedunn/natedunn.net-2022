@@ -11,38 +11,60 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
-  },
-  {
-    name: 'Animaginary',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'HelioStream',
-    description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+    name: 'Headroom',
+    description: 'Open source starter for building headless sites with Next.js',
+    link: { href: 'https://github.com/natedunn/headroom', label: 'github.com' },
+    status: 'Active',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: 'Zephyr',
+    description: 'A themeable component library for React and Vue',
+    link: { href: 'https://usezephyr.com', label: 'usezephyr.com' },
+    tech: ['React', 'Vue', 'TypeScript'],
+    status: 'On Hold',
+    logo: logoPlanetaria,
+  },
+  {
+    name: 'Project Zao',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      'A proof-of-concept page builder for Next.js and React. Bring your own components.',
+    link: { href: '#', label: 'Demo Coming Soon' },
+    status: 'In Development',
+    tech: ['Next.js', 'React', 'Tailwind CSS'],
+    logo: logoAnimaginary,
+  },
+  {
+    name: 'Proper',
+    description:
+      'Generate shell scripts to setup a macOS laptop for design, development, and whatever else you need.',
+    link: {
+      href: 'https://github.com/useproper/proper-app/',
+      label: 'Github',
+    },
+    tech: ['Next.js', 'Tailwind CSS'],
+    status: 'Deprecated',
+    logo: logoHelioStream,
+  },
+  {
+    name: 'Fundación Flag',
+    description:
+      'Marketing site for foundation in Mexico City that provides students scholarships.',
+    link: { href: 'https://fundacionflag.org/', label: 'github.com' },
+    status: 'Complete',
+    tech: ['Vue', 'Nuxt', 'Tailwind CSS'],
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
+    name: 'Press CSS',
+    description: 'Pre-Tailwind era CSS framework, built for Frontiers USA.',
+    link: {
+      href: 'https://frontiersusa.github.io/press-css/',
+      label: 'Demo',
+    },
+    tech: ['CSS', 'PostCSS'],
+    status: 'Deprecated',
     logo: logoOpenShuttle,
   },
 ]
@@ -62,15 +84,12 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
-        <meta
-          name="description"
-          content="Things I’ve made trying to put my dent in the universe."
-        />
+        <title>Projects - Nate Dunn</title>
+        <meta name="description" content="" />
       </Head>
       <SimpleLayout
-        title="Things I’ve made trying to put my dent in the universe."
-        intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+        title="A few things I have worked on."
+        intro="I've worked on many project behind closed doors, but here are a few that I have been able to work on in public."
       >
         <ul
           role="list"
@@ -78,22 +97,27 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              {/* <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={project.logo}
                   alt=""
                   className="h-8 w-8"
                   unoptimized
                 />
-              </div>
+              </div> */}
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
+              <div className="mt-4 flex items-center gap-4">
+                <div className="relative z-10 inline-flex rounded-full bg-white/25 px-2.5 py-0.5 text-xs text-zinc-900 dark:text-white ">
+                  {project?.status}
+                </div>
+                <div className="relative z-10 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                  <LinkIcon className="h-6 w-6 flex-none" />
+                  <span className="ml-2">{project.link.label}</span>
+                </div>
+              </div>
             </Card>
           ))}
         </ul>

@@ -10,7 +10,7 @@ import {
   GitHubLogoIcon as GitHubIcon,
   LinkedInLogoIcon as LinkedInIcon,
 } from '@radix-ui/react-icons'
-import portraitImage from '@/images/portrait.jpg'
+import MeImage from '@/images/me-square.png'
 
 type SocialProps = {
   href: string
@@ -59,10 +59,9 @@ export default function About() {
           <div className="lg:pl-20">
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
-                src={portraitImage}
-                alt=""
-                sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                src={MeImage}
+                alt="Nate Dunn"
+                className="aspect-square bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
@@ -70,16 +69,22 @@ export default function About() {
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
               Hello, I&apos;m Nate.
             </h1>
-            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 lg:text-2xl">
+            <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400 lg:text-xl">
               <p>
-                I am a front-end web developer and designer, originally from
-                Phoenix, Arizona but now living in Mexico City.
+                I am a full stack web developer, originally from Phoenix,
+                Arizona but now living in Mexico City.
               </p>
               <p>
                 I have been building for the web for over 10 years. These days I
-                work as a full stack JavaScript developer, with a focus in
-                React/Next.js. You can check out{' '}
-                <Link href="/stacks">stacks I am familiar with</Link>.
+                work primarily in JavaScript, with a focus in React/Next.js. You
+                can check out all the{' '}
+                <Link
+                  className="underline underline-offset-2 hover:opacity-50"
+                  href="/resume"
+                >
+                  stacks I am familiar with
+                </Link>
+                .
               </p>
               <p>
                 I am a avid learner and constantly experimenting. But most of
@@ -110,11 +115,11 @@ export default function About() {
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:hello@natedunn.net"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                spencer@planetaria.tech
+                hello@natedunn.net
               </SocialLink>
             </ul>
           </div>

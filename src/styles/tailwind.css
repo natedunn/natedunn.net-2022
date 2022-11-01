@@ -2,3 +2,23 @@
 @import 'tailwindcss/components';
 @import './prism.css';
 @import 'tailwindcss/utilities';
+
+.bg-header {
+  background-image: linear-gradient(
+    180deg,
+    #ffffff87 17%,
+    #ffffff5c 50%,
+    transparent 90%
+  );
+  backdrop-filter: opacity(0.5);
+}
+
+html.dark .bg-header {
+  background-image: linear-gradient(
+    180deg,
+    #000000e3 17%,
+    #00000099 50%,
+    transparent 94%
+  );
+  backdrop-filter: opacity(0.5);
+}
