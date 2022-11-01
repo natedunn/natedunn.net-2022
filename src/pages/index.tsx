@@ -276,17 +276,17 @@ export default function Home({ articles }) {
               </p>
               <div className="mt-6 flex gap-6">
                 <SocialLink
-                  href="https://twitter.com"
+                  href="https://twitter.com/natedunn"
                   aria-label="Follow on Twitter"
                   icon={TwitterIcon}
                 />
                 <SocialLink
-                  href="https://instagram.com"
+                  href="https://instagram.com/natedunn"
                   aria-label="Follow on Instagram"
                   icon={InstagramIcon}
                 />
                 <SocialLink
-                  href="https://github.com"
+                  href="https://github.com/natedunn"
                   aria-label="Follow on GitHub"
                   icon={GitHubIcon}
                 />
