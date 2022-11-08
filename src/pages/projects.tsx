@@ -3,11 +3,13 @@ import Head from 'next/head'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+
+import headroomLogo from '@public/logos/headroom.svg'
+import properLogo from '@public/logos/proper.svg'
+import zaoLogo from '@public/logos/zao.svg'
+import zephyrLogo from '@public/logos/zephyr.svg'
+import flagLogo from '@public/logos/flag.svg'
+import pressLogo from '@public/logos/press.svg'
 
 const projects = [
   {
@@ -16,7 +18,28 @@ const projects = [
     link: { href: 'https://github.com/natedunn/headroom', label: 'github.com' },
     status: 'Active',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    logo: logoHelioStream,
+    logo: headroomLogo,
+  },
+  {
+    name: 'Project Zao',
+    description:
+      'A proof-of-concept page builder for Next.js and React. Bring your own components.',
+    // link: { href: '#', label: 'Demo Coming Soon' },
+    status: 'In Development',
+    tech: ['Next.js', 'React', 'Tailwind CSS'],
+    logo: zaoLogo,
+  },
+  {
+    name: 'Proper',
+    description:
+      'Generate shell scripts to setup a macOS laptop for design, development, and whatever else you need.',
+    link: {
+      href: 'http://useproper.app',
+      label: 'useproper.com',
+    },
+    tech: ['Next.js', 'Tailwind CSS'],
+    status: 'On Hold',
+    logo: properLogo,
   },
   {
     name: 'Zephyr',
@@ -24,37 +47,16 @@ const projects = [
     link: { href: 'https://usezephyr.com', label: 'usezephyr.com' },
     tech: ['React', 'Vue', 'TypeScript'],
     status: 'On Hold',
-    logo: logoPlanetaria,
-  },
-  {
-    name: 'Project Zao',
-    description:
-      'A proof-of-concept page builder for Next.js and React. Bring your own components.',
-    link: { href: '#', label: 'Demo Coming Soon' },
-    status: 'In Development',
-    tech: ['Next.js', 'React', 'Tailwind CSS'],
-    logo: logoAnimaginary,
-  },
-  {
-    name: 'Proper',
-    description:
-      'Generate shell scripts to setup a macOS laptop for design, development, and whatever else you need.',
-    link: {
-      href: 'https://github.com/useproper/proper-app/',
-      label: 'Github',
-    },
-    tech: ['Next.js', 'Tailwind CSS'],
-    status: 'Deprecated',
-    logo: logoHelioStream,
+    logo: zephyrLogo,
   },
   {
     name: 'Fundación Flag',
     description:
       'Marketing site for foundation in Mexico City that provides students scholarships.',
-    link: { href: 'https://fundacionflag.org/', label: 'github.com' },
+    link: { href: 'https://fundacionflag.org/', label: 'fundacionflag.org' },
     status: 'Complete',
     tech: ['Vue', 'Nuxt', 'Tailwind CSS'],
-    logo: logoCosmos,
+    logo: flagLogo,
   },
   {
     name: 'Press CSS',
@@ -65,7 +67,7 @@ const projects = [
     },
     tech: ['CSS', 'PostCSS'],
     status: 'Deprecated',
-    logo: logoOpenShuttle,
+    logo: pressLogo,
   },
 ]
 
@@ -97,26 +99,39 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <Card as="li" key={project.name}>
-              {/* <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full">
                 <Image
                   src={project.logo}
                   alt=""
-                  className="h-8 w-8"
+                  className="h-10 w-10"
                   unoptimized
                 />
-              </div> */}
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              </div>
+              <h2 className="mt-6 text-2xl font-bold text-zinc-800 dark:text-zinc-100">
+                {project.link ? (
+                  <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                ) : (
+                  project.name
+                )}
               </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <div className="mt-4 flex items-center gap-4">
-                <div className="relative z-10 inline-flex rounded-full bg-white/25 px-2.5 py-0.5 text-xs text-zinc-900 dark:text-white ">
+              <div className="mb-4">
+                <Card.Description>{project.description}</Card.Description>
+              </div>
+              <div className="mb-8 text-xs  uppercase dark:text-white/50">
+                {project.tech.map((t, i) =>
+                  project.tech.length === i + 1 ? `${t}` : `${t} • `
+                )}
+              </div>
+              <div className="mt-auto flex items-center gap-4">
+                <div className="relative z-10 inline-flex rounded-full bg-slate-200 px-2.5 py-0.5 text-xs text-zinc-900 dark:bg-slate-800 dark:text-white">
                   {project?.status}
                 </div>
-                <div className="relative z-10 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                  <LinkIcon className="h-6 w-6 flex-none" />
-                  <span className="ml-2">{project.link.label}</span>
-                </div>
+                {project?.link?.label ? (
+                  <div className="relative z-10 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">{project.link.label}</span>
+                  </div>
+                ) : null}
               </div>
             </Card>
           ))}

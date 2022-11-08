@@ -291,7 +291,8 @@ export default function Home({ articles }) {
                   icon={GitHubIcon}
                 />
                 <SocialLink
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/nate-dunn
+
                   aria-label="Follow on LinkedIn"
                   icon={LinkedInIcon}
                 />

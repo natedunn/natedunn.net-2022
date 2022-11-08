@@ -1,0 +1,37 @@
+import Image from 'next/image'
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  published: true,
+  author: 'Nate Dunn',
+  date: '2022-10-31',
+  title: 'Next 13 is a roadmap, not a release',
+  tags: ['nextjs', 'opinion'],
+  description: 'Could it have been an email?',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+### Hype Cycle
+
+Every year we can expect an announcement of the forthcoming Next.js Conference. This year's iteration had it's hype level raised with catchy marketing lingo like "dynamic without Limits", and promising that the conference will "change the way you code".
+
+Through their very Apple-_like_ presentation, Vercel did introduce the newest version of Next.js, while laying out its features and... _roadmap_. What does it actually change for us developers today?
+
+### Welcome to the future... tomorrow
+
+There there three major announcements:
+
+- Turbopack
+- `app/` directory (layouts & server components)
+- Component tool kit
+
+Out of these three pillars, two of them are considered _unstable_ and not recommended for production use. And spoiler alert: its the two most exciting announcements. My time with both Turbopack and the `app/` directory has been buggy to say the least, and it did put a halt on my initial excitement. But Vercel is building and releasing open sourced software here, not fully baked products. Community feedback is essential to quality releases and this a way they are going to get it.
+
+My assumption is that there was an expected flashiness they desired from this year's conference. But forward movement, or lack thereof, on core React features could be a real bottleneck. (Let's just imagine what the conf would have been if they only announced... an Image component.)
+
+### Good things on the horizon
+
+Putting aside any concerns or issue I might have with the `app/` architecture, the 'Hello World' bundle size, or how Turbopack seems like just a twinkle in Tobias Koppers' eye... I am still very excited for the future of Next.js. In the midst of React-doomsayers, Vercel is still finding ways of making React relevant and cutting edge.
+
+But sometimes, I'm left wondering: _could have this been an email?_
