@@ -96,8 +96,7 @@ export default function ResumePage() {
                 icon={GitHubIcon}
               />
               <SocialLink
-                href="https://linkedin.com/in/nate-dunn
-
+                href="https://linkedin.com/in/nate-dunn"
                 aria-label="Follow on LinkedIn"
                 icon={LinkedInIcon}
               />
