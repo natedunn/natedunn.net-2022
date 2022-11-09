@@ -44,8 +44,8 @@ export default function Uses() {
         />
       </Head>
       <SimpleLayout
-        title="Software I use, gadgets I love, and other things I recommend."
-        intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+        title="Software, gadgets, and other things I use"
+        intro="Here is a list of things that I use, most daily, for work or things work adjacent"
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">

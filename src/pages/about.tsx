@@ -76,8 +76,8 @@ export default function About() {
               </p>
               <p>
                 I have been building for the web for over 10 years. These days I
-                work primarily in JavaScript, with a focus in React/Next.js. You
-                can check out all the{' '}
+                work primarily in JavaScript, with a focus in React & Next.js.
+                You can check more{' '}
                 <Link
                   className="underline underline-offset-2 hover:opacity-50"
                   href="/resume"
