@@ -6,7 +6,7 @@ export const meta = {
   title: 'Hello Headroom',
   tags: ['astro', 'static', 'jamstack'],
   description:
-    'A simple starter kit for building static sites with Astro. Built in Typescript and includes Tailwind CSS and tRPC-like APIs for clean templates & components.',
+    'A starter for building headless sites with Astro',
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />

@@ -14,10 +14,10 @@ import pressLogo from '@public/logos/press.svg'
 const projects = [
   {
     name: 'Headroom',
-    description: 'Open source starter for building headless sites with Next.js',
+    description: 'Open source starter for building headless sites with Astro',
     link: { href: 'https://github.com/natedunn/headroom', label: 'github.com' },
     status: 'Active',
-    tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    tech: ['Astro', 'TypeScript', 'Tailwind CSS', 'APIs'],
     logo: headroomLogo,
   },
   {
