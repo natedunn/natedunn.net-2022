@@ -117,13 +117,13 @@ export default function Projects() {
               <div className="mb-4">
                 <Card.Description>{project.description}</Card.Description>
               </div>
-              <div className="mb-8 text-xs  uppercase dark:text-white/50">
+              <div className="z-10 mb-8 text-xs uppercase dark:text-white/50">
                 {project.tech.map((t, i) =>
                   project.tech.length === i + 1 ? `${t}` : `${t} • `
                 )}
               </div>
               <div className="mt-auto flex items-center gap-4">
-                <div className="relative z-10 inline-flex rounded-full bg-slate-200 px-2.5 py-0.5 text-xs text-zinc-900 dark:bg-slate-800 dark:text-white">
+                <div className="relative z-10 inline-flex rounded-full bg-slate-200 px-2.5 py-0.5 text-xs text-zinc-900 group-hover:bg-slate-300 dark:bg-slate-800 dark:text-white">
                   {project?.status}
                 </div>
                 {project?.link?.label ? (

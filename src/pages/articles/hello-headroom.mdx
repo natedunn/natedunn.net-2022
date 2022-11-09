@@ -1,0 +1,31 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Nate Dunn',
+  date: '2022-11-01',
+  title: 'Hello Headroom',
+  tags: ['astro', 'static', 'jamstack', 'project'],
+  description: 'A starter for building headless sites with Astro',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+## Let's make some room
+
+I often work on static and/or headless websites. Often my go-to stack was Next.js. Not because it was the best at either of those things, but because thought it could transform itself from mere "website" to "application" quiet easily. However it took me a while to realize that with all the work arounds with prop passing, bundle sizes, and (more recently) the shift in focus on server components... the transformation that I was actually performing was from "application" to "website". And it wasn't always pretty or benifical.
+
+Astro fits this need much better. I had used Astro on some basic landing pages in the beta days and a lot has changed since then. Now Astro fits nearly every need I have for building a website that still needs to be flexible. With this shift in my tech stack, I needed a better starting point to get into headless devleopment faster.
+
+That's why I am maintaining a starter kit called Headroom.
+
+## What is Headroom?
+
+Headroom is very simple. Its a base install of Astro with helper functions for fetching, tRPC-like APIs for surfacing those fetches to your components, and an optional GraphQL codegen. There are a few other nicietest like Tailwind and Typescript. But nearly everything is something that you can update, remove, and add to. Nothing is too sacred here. :)
+
+I have some basic documentation on how to use some of these features, but the rest is up to you.
+
+## Future work
+
+I plan on updating this as continue to build sites off of it, but eventually I could see this as a simple Astro plugin. I'll update this post or add a new post if there are significant changes.
+
+[Github](https://github.com/natedunn/headroom) | [Examples](https://headroom.natedunn.net/examples) | [Documentation](https://headroom.natedunn.net/docs)

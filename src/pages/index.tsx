@@ -164,7 +164,7 @@ export default function Home({ articles }) {
         </div>
       </Container>
       <Container className="mt-24 md:mt-28">
-        <h3 className="text-3xl font-bold text-white">Recent Articles</h3>
+        <h3 className="text-3xl font-bold dark:text-white">Recent Articles</h3>
         <div className="mx-auto mt-10 grid grid-cols-1 gap-y-20">
           <div className="grid w-full grid-cols-1 gap-16 lg:grid-cols-3">
             {articles.map((article) => (
